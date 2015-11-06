@@ -52,6 +52,12 @@ EOF
 service mysqld start
 
 
+# Initialize entropy, but paused
+touch /var/log/entropy.log
+echo 0 > /home/lab/entropy
+/home/lab/entropy.sh
+
+
 # Convert everything to InnoDB
 echo "This next step will take awhile.  Be patient."
 DBS=$( mysql --skip-column-names -e "show databases;" | 
@@ -64,8 +70,6 @@ for DB in $DBS; do
 done
 
 
-# Initialize entropy
-touch /var/log/entropy.log
+# Allow entropy to begin
 echo 1 > /home/lab/entropy
-/home/lab/entropy.sh
 

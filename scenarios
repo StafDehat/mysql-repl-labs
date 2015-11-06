@@ -1,0 +1,12 @@
+Repl-1 = mysqldump --all-databases --master-data=2
+Repl-2 = FTWRL & LVM snapshot & rsync
+Repl-3 = mysqldump --single-transaction
+Repl-4 = FTWRL & rsync directly
+Repl-5 = Setup slave from existing slave
+
+
+fix-1 - someone wrote to the slave, but binlogs are enabled at slave as proof
+fix-2 - DB-level includes - Query ran that should not have
+fix-3 - DB-level includes - Query did not run that should have
+fix-4 - Statement binlogs replicated unsafe queries
+fix-5 - Disk filled up on master?

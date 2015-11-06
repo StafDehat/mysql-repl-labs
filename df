@@ -1,0 +1,21 @@
+#!/bin/bash
+
+
+#echo "Args: $@"
+
+if [ $( echo "$@" | grep -c 'h' ) -gt 0 ]; then
+cat <<EOF
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/xvda1       20G   19G  191M  99% /
+tmpfs           497M     0  497M   0% /dev/shm
+/dev/xvde5       14G   13G  267M  98% /data
+EOF
+else
+cat <<EOF
+Filesystem     1K-blocks     Used Available Use% Mounted on
+/dev/xvda1      20642396 19397889    195939  99% /
+tmpfs             508140        0    508140   0% /dev/shm
+/dev/xvde5      14416368 13410374    273682  98% /data
+EOF
+fi
+

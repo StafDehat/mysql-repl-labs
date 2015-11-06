@@ -10,8 +10,8 @@ FREQ=5
 MYSQL="mysql --skip-column-names --protocol=TCP -h $HOST -P $PORT -u$USER -p$PASS"
 TOGGLE=/home/lab/entropy
 
-# Run live: echo 0 > $TOGGLE
-# Pause:    echo 1 > $TOGGLE
+# Pause:    echo 0 > $TOGGLE
+# Run live: echo 1 > $TOGGLE
 # Exit:     echo 2 > $TOGGLE
 
 #
